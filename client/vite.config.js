@@ -16,6 +16,9 @@ export default defineConfig({
     },
   },
   build: {
-    outDir: 'dist', // Ensure this matches where you want your output files to go
+    outDir: 'dist',
+    rollupOptions: {
+      external: ['@apollo/client'], // Exclude @apollo/client from the bundle
+    },
   },
 });
