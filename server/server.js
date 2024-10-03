@@ -28,14 +28,14 @@ async function startApolloServer() {
     context: authMiddleware, // Auth middleware for passing user context
   }));
 
-  // Serve static assets in production
-  if (process.env.NODE_ENV === 'production') {
-    app.use(express.static(path.join(__dirname, '../client/build')));
+ // Serve static assets in production
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, '../client/dist'))); // Change 'build' to 'dist'
 
-    app.get('*', (req, res) => {
-      res.sendFile(path.join(__dirname, '../client/build/index.html'));
-    });
-  }
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../client/dist/index.html')); // Change 'build' to 'dist'
+  });
+}
 
   // Start the server after the database connection is open
   db.once('open', () => {
