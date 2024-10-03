@@ -19,6 +19,7 @@
   "dependencies": {
     "@apollo/server": "^4.11.0",
     "apollo-server-express": "^3.13.0",
+    "bcryptjs": "^2.4.3",
     "graphql": "^16.9.0",
     "graphql-tag": "^2.12.6"
   }
